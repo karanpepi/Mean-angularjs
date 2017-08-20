@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" ng-init="getEmployees()">
+  <h2>Striped Rows</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Department</th>
+        <th>Locations</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in employees">
+        <td>{{employee.name}}</td>
+        <td>{{employee.dept}}</td>
+        <td>{{employee.area}}</td>
+        <td>
+          <a href="#!/employees/{{employee._id}}/show" class="btn btn-info">Show</a>
+          <a href="#!/employees/{{employee._id}}/edit" class="btn btn-success">Edit</a>
+          <a ng-click="deleteEmployee(employee._id)" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
